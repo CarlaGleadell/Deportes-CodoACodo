@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/EstilosForm.css">
+    <script src="https://kit.fontawesome.com/36a4c2d72b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../Java/globe-solid.svg">
+    <title>Crear Cuenta</title>
+</head>
+<body>
+    <section>
+        <div class="contenedores">
+            <h1>Crear Cuenta <i class="fa-solid fa-circle-user"></i></h1>
+        </div>
+        <div class="contenedores">
+            <form action="./respuesta-form.html">
+                <div>
+                    <label for="name">Nombre</label><br>
+                    <input type="text" name="name" size="30" required="True" placeholder="Nombre completo">
+                </div>
+                <div>
+                    <label for="lastname">Apellido</label><br>
+                    <input type="text" name="lastname" size="30" required="True" placeholder="Apellido">
+                </div>
+                <div>
+                    <fieldset>
+                        <legend> Seleccione M o F</legend>
+                        <div>
+                            <input type="radio" id="M" name="selec" value="M" >
+                            <label for="M">M</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="F" name="selec" value="F" >
+                            <label for="F">F</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="terreneitor" name="selec" value="none" >
+                            <label for="none">S/N</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="Email">Email</label><br>
+                    <input type="text" name="Email" size="30" required="True" placeholder="Escriba su Email" >
+                </div>
+                <div>
+                    <label for="pass">Contraseña</label><br>
+                    <input type="text" name="pass" size="30" required="True" placeholder="Contraseña">
+                </div>
+                <div>
+                    <label for="pass">Repetir Contraseña</label><br>
+                    <input type="text" name="pass" size="30" required="True" placeholder="Repetir Contraseña">
+                </div>
+                <div class="volverinicio">
+                    <input type="submit" value="Siguiente">
+                </div>
+            </form>
+        </div>
+        <div class="formulario">
+            <a href="../index.html">Volver al Inicio</a>
+            <a href="./formulario.html">Volver</a>
+        </div>
+    </section>
+</body>
+</html>

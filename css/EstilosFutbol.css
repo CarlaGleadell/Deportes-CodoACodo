@@ -1,0 +1,55 @@
+/*----------TIPOGRAFIA--------------*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500; /*tamaño de letra (gosor)*/
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    box-sizing: border-box;
+} 
+body{
+  margin: 0;
+  padding: 0;
+
+}
+.lista {
+  background-color: gray;
+  border-radius: 5px;
+}
+.volverinicio{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+
+img {
+  width: 100%;
+}
+h1,h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+video {
+  margin: 5px;
+  border-radius: 5%;
+
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(187, 245, 122);
+}
+
+@media(max-width: 320px){
+  .parallax{
+      flex-direction: column;
+  }
+  .header{
+    flex-direction: column;
+  }
+}

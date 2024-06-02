@@ -1,0 +1,245 @@
+
+:root{
+    --bg-color:#20013aea;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+main{
+    background: var(--bg-color);
+    font-family:Verdana, Tahoma, sans-serif;
+    padding-top: 60px;
+}
+
+.header{
+    background-color: rgb(206, 122, 54);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;    
+    align-items: center; 
+    height: 60px;
+    padding: 0px 50px;
+}
+
+
+#logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 25px; 
+    height: auto;
+    margin: 10px; 
+}
+
+#logo a{
+    color: #FFF;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+
+.nav-links li > a{
+    color: #FFF;
+    text-decoration: none;
+}
+
+.nav-links a:hover{
+    color: #000000;
+}
+
+#banner{
+    background-image: url('../img/voley2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    box-shadow:inset 0 0 0 2000px rgba(84, 84, 84, 0.5);
+}
+
+
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.banner-card{
+    text-align: center;
+    padding: 0px 50px;
+}
+
+.banner-card h1{
+    margin: auto;
+    color: #FFF;
+    font-size: 5vw;
+}
+
+#reglamento{
+    background-color: #000000;
+    color: aliceblue;
+    text-align: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+}
+
+.reglamento-card ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.reglamento-card li {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:large;
+    color: aliceblue;
+    width: 80%;
+    margin: 1.5% auto; 
+    background-color: rgba(171, 111, 21, 0.776);
+    padding: 2%;
+    list-style: none;
+    color: aliceblue;
+    border-color:#e7c199;
+    border-style:dashed;
+    font-weight: bold;
+}
+
+.reglamento-card h1{
+    margin: 30px;
+}
+
+#jugadores{
+    color: aliceblue;
+    text-align: center;
+    background-color: #000000;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    margin-top: -30px;
+}
+
+.jugadores-card h1{
+    margin: 30px;
+}
+
+
+.jugador-nombre {
+    position: absolute; 
+    top: 300px;
+    left: 0%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0); 
+    z-index: 1;
+    font-size:medium;
+    width: 100%;
+    height: 100%;
+}
+
+.jugador-item{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    display: inline-block;
+    
+}
+.jugador-item-img{
+    width: 200px;
+    height: 300px;
+}
+
+.jugador-detalles {
+    background-color: black;
+    color: white; 
+    padding: 20px; 
+    border-radius: 20px;
+}
+
+
+
+#historico{
+    background-color: #000000;
+    color: aliceblue;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+
+#historico h3{
+    margin: 3%;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+#historico p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(206, 122, 54);
+    padding: 20px;
+    color: #FFF;
+    flex-wrap: wrap; 
+}
+
+.footer-column {
+    flex: 1;
+    padding: 10px;
+    min-width: 200px; 
+    text-align: center;
+}
+
+.footer-column a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* TABLETS */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h2{
+        font-size: 4vw;
+    }
+
+}
+
+/* CELULARES */
+@media screen and (max-width:767px){
+    h2{
+        font-size: 3vw;
+    }
+
+    #footer{
+        flex-direction: column;
+        justify-content: center;
+    }
+}
