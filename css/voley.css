@@ -1,6 +1,6 @@
 
 :root{
-    --bg-color:#20013aea;
+    --bg-color:#000000;
 }
 
 *{
@@ -15,14 +15,6 @@ main{
     padding-top: 60px;
 }
 
-.header{
-    background-color: rgb(206, 122, 54);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-}
 
 nav {
     display: flex;
@@ -32,20 +24,23 @@ nav {
     padding: 0px 50px;
 }
 
+.header{
+    background-color: rgb(5, 156, 47);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
 
-#logo{
+#inicio{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo img {
-    width: 25px; 
-    height: auto;
-    margin: 10px; 
-}
 
-#logo a{
+#inicio a{
     color: #FFF;
 }
 
@@ -115,11 +110,11 @@ nav {
     color: aliceblue;
     width: 80%;
     margin: 1.5% auto; 
-    background-color: rgba(171, 111, 21, 0.776);
+    background-color: rgb(5, 156, 47);
     padding: 2%;
     list-style: none;
     color: aliceblue;
-    border-color:#e7c199;
+    border-color:#FFF;
     border-style:dashed;
     font-weight: bold;
 }
@@ -135,7 +130,6 @@ nav {
     background-size: cover;
     background-position: center;
     height: auto;
-    margin-top: -30px;
 }
 
 .jugadores-card h1{
@@ -147,7 +141,7 @@ nav {
     position: absolute; 
     top: 300px;
     left: 0%;
-    background-color: rgb(255, 255, 255);
+    background-color:rgb(5, 156, 47);
     color: rgb(0, 0, 0); 
     z-index: 1;
     font-size:medium;
@@ -200,7 +194,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(206, 122, 54);
+    background-color: rgb(5, 156, 47);
     padding: 20px;
     color: #FFF;
     flex-wrap: wrap; 
