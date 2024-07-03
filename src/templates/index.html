@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/EstilosIndex.css">
+    <link rel="stylesheet" href="../static/css/styleIndex.css">
     <script src="https://kit.fontawesome.com/36a4c2d72b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleIndex.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='java/menu.js') }}"></script>
     <title>Proyecto Front</title>
 </head>
 
@@ -16,11 +18,11 @@
         </div>
         <div id="desplegable">
             <ul class="flexiul">
-                <li><a href="./html/Futbol.html"><i class="fa-solid fa-futbol"></i>FUTBOL</a></li>
-                <li><a href="./html/voley.html"><i class="fa-solid fa-volleyball"></i>VOLEY</a></li>
-                <li><a href="./html/hockey.html" ><i class="fa-solid fa-hockey-puck"></i>HOCKEY</a></li>
-                <li><a href="./html/formulario.html" ><i class="fa-solid fa-user"></i>INICIO</a></li>
-                <li><a href="./html/equipos.html" ><i class="fa-solid fa-people-group"></i>EQUIPOS</a></li>
+                <li><a href="{{ url_for('futbol') }}"><i class="fa-solid fa-futbol"></i>FUTBOL</a></li>
+                <li><a href="{{ url_for('voley') }}"><i class="fa-solid fa-volleyball"></i>VOLEY</a></li>
+                <li><a href="{{ url_for('hockey') }}"><i class="fa-solid fa-hockey-puck"></i>HOCKEY</a></li>
+                <li><a href="{{ url_for('formulario') }}"><i class="fa-solid fa-user"></i>INICIO</a></li>
+                <li><a href="{{ url_for('equipos') }}"><i class="fa-solid fa-people-group"></i>EQUIPOS</a></li>
             </ul>
         </div> 
         
@@ -29,15 +31,15 @@
     <main class="main">
         
         <section>
-            <a href="./html/Futbol.html"><h2><i class="fa-solid fa-futbol fa-fade"></i>Futbol<i class="fa-solid fa-futbol fa-fade"></i></h2></a>
+            <a href="./Futbol.html"><h2><i class="fa-solid fa-futbol fa-fade"></i>Futbol<i class="fa-solid fa-futbol fa-fade"></i></h2></a>
             <iframe name="Iframe-Futbol" src="https://futbollibretv.ar/" width="85%" height="600"></iframe>
         </section>
         <section>
-            <a href="./html/voley.html"><h2><i class="fa-solid fa-volleyball fa-fade"></i>Voley<i class="fa-solid fa-volleyball fa-fade"></i></h2></a>
+            <a href="./voley.html"><h2><i class="fa-solid fa-volleyball fa-fade"></i>Voley<i class="fa-solid fa-volleyball fa-fade"></i></h2></a>
             <iframe src="https://play.tycsports.com/voley.html" width="85%" height="600" ></iframe>
         </section>
         <section>
-            <a href="./html/hockey.html"><h2><i class="fa-solid fa-hockey-puck fa-fade"></i>Hockey<i class="fa-solid fa-hockey-puck fa-fade"></i></h2></a>
+            <a href="./hockey.html"><h2><i class="fa-solid fa-hockey-puck fa-fade"></i>Hockey<i class="fa-solid fa-hockey-puck fa-fade"></i></h2></a>
             <iframe src="https://www.cahockey.org.ar/" width="85%" height="600"></iframe>
         </section>
     </main>
@@ -47,7 +49,7 @@
             <li><a href="https://www.linkedin.com/in/vanesa-gomez-5b954921b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " target="_blank"><i class="fa-brands fa-linkedin"></i>Vanesa Gomez </a></li>
             <li><a href="https://www.linkedin.com/in/mauricio-lannutti-10003b99" target="_blank"><i class="fa-brands fa-linkedin"></i>Mauricio Lannutti</a></li>
         </ul>
-        <script type="text/javascript" src="./Java/menu.js"></script>
+        <script type="text/javascript" src="./java/menu.js"></script>
     </footer>
 </body>
 </html>

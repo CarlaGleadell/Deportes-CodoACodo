@@ -7,7 +7,7 @@
     font-style: normal;
     font-variation-settings: "wdth" 100;
     box-sizing: border-box;
-    margin: 0;
+    margin: 0; 
     padding: 0;
 }
 
@@ -23,6 +23,9 @@ body {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 header {
@@ -39,6 +42,8 @@ header {
     padding: 0 20px;
     box-sizing: border-box;
 }
+
+
 
 #inicio {
     display: flex;
@@ -68,7 +73,46 @@ main {
     color: #000;
 }
 
-
+.contenedores{
+    border-radius: 5px;
+    padding: 1%;
+    margin: 1%;
+}
+.contenedores form div input{
+    border-radius: 10px;
+}
+section{
+    display: flex;
+    padding: 5rem;
+    border-radius: 5%;
+    background-color: rgb(5, 156, 47);
+    flex-direction: column;
+}
+section h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+section h1 i{
+    font-size: 287%;
+    margin: 0px 40px;
+    align-self: center;
+}
+.botoneslogin{
+    display: flex;
+    justify-content: space-between;
+    margin: 5px
+}
+.volverinicio{
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+}
+.formulario{
+    display: flex;
+    justify-content: space-between
+}
 
 .footer {
     position: fixed;
