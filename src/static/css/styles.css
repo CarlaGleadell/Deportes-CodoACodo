@@ -114,6 +114,36 @@ section h1 i{
     justify-content: space-between
 }
 
+.formNuevoEquipo form{
+    width: 400px;
+    padding: 20px;
+    background-color: #000000;
+}
+.formNuevoEquipo form div {
+    margin-bottom: 10px;
+}
+
+.formNuevoEquipo form div label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formNuevoEquipo form div input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formNuevoEquipo form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .footer {
     position: fixed;
     bottom: 0;

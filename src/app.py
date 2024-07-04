@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 import os
 import database as db
 
@@ -48,8 +48,19 @@ def equipos():
 
     return render_template('equipos.html', data = insertarObjetos)
 
-@app.route('/nuevoEquipo')
+@app.route('/nuevoEquipo', methods = ['post'])
 def nuevoEquipo():
+    nombre = request.form['nombre']
+    deporte = request.form['deporte']
+    localidad = request.form['localidad']
+
+    if nombre and deporte and localidad:
+        cursor = db.database.cursor()
+        sql = "INSERT INTO equipos (nombre, deporte, localidad) VALUES (%s, %s, %s)"
+        data = ( nombre, deporte, localidad)
+        cursor.execute(sql, data)
+        db.database.commit()
+
     return render_template('nuevoEquipo.html')
 
 if __name__ == '__main__':
