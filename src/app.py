@@ -65,5 +65,40 @@ def nuevoEquipo():
     
     return render_template('nuevoEquipo.html')
 
+
+@app.route('/modificarEquipo/<int:id>', methods=['GET', 'POST'])
+def modificarEquipo(id):
+    cursor = db.database.cursor(dictionary=True)  
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        deporte = request.form['deporte']
+        localidad = request.form['localidad']
+        
+        sql = "UPDATE equipos SET Nombre = %s, Deporte = %s, Localidad = %s WHERE Id = %s"
+        data = (nombre, deporte, localidad, id)
+        cursor.execute(sql, data)
+        db.database.commit()
+        return redirect(url_for('equipos'))
+    
+    cursor.execute("SELECT * FROM equipos WHERE Id = %s", (id,))
+    equipo = cursor.fetchone()
+    cursor.close()
+    return render_template('modificarEquipo.html', equipo=equipo)
+
+@app.route('/eliminarEquipo/<int:id>', methods=['GET', 'POST'])
+def eliminarEquipo(id):
+    cursor = db.database.cursor(dictionary=True)
+    if request.method == 'POST':
+        sql = "DELETE FROM equipos WHERE Id = %s"
+        cursor.execute(sql, (id,))
+        db.database.commit()
+        return redirect(url_for('equipos'))
+    
+    cursor.execute("SELECT * FROM equipos WHERE Id = %s", (id,))
+    equipo = cursor.fetchone()
+    cursor.close()
+    return render_template('eliminarEquipo.html', equipo=equipo)
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=4000)

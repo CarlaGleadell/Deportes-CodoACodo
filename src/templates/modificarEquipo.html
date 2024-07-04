@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -8,45 +7,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='java/globe-solid.svg') }}">
-    <title>Equipos</title>
+    <title>Modificar Equipo</title>
 </head>
 <body>
    <header class="header">
     <div id="inicio">
-      <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>INICIO</a>
+        <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>INICIO</a>
     </div>
     </header>
-    <main>
+    <main class="formModificarEquipo">
         <br>
-        <h1>Lista de equipos</h1>
+        <h1>Modificar equipo</h1>
         <br>
-        <a href="{{ url_for('nuevoEquipo') }}" class="btn btn-success">Crear nuevo equipo</a>
-        <table class="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">N°</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Deporte</th>
-                <th scope="col">Localidad</th>
-                <th scope="col">Opciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for d in data %}
-              <tr>
-                <td>{{d.Id}}</td>
-                <td>{{d.Nombre}}</td>
-                <td>{{d.Deporte}}</td>
-                <td>{{d.Localidad}}</td>
-                <td>
-                  <button class="btn btn-info btn-sm" id="">Ver más</button>
-                  <a href="{{ url_for('modificarEquipo', id=d.Id) }}" class="btn btn-warning btn-sm">Editar</a>
-                  <a href="{{ url_for('eliminarEquipo', id=d.Id) }}" class="btn btn-danger btn-sm">Borrar</a>
-                </td>
-              </tr>
-              {% endfor %}
-              </tbody>
-          </table>
+        <form action="{{ url_for('modificarEquipo', id=equipo['Id']) }}" method="post">
+            <div>
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ equipo['Nombre'] }}" required>
+            </div>
+            <div>
+                <label for="deporte" class="form-label">Deporte</label>
+                <input type="text" class="form-control" id="deporte" name="deporte" value="{{ equipo['Deporte'] }}" required>
+            </div>
+            <div>
+                <label for="localidad" class="form-label">Localidad</label>
+                <input type="text" class="form-control" id="localidad" name="localidad" value="{{ equipo['Localidad'] }}" required>
+            </div>
+            <br>
+            <button class="btn btn-success" type="submit">Guardar cambios</button>
+            <a href="{{ url_for('equipos') }}" class="btn btn-danger">Cancelar</a>
+        </form>
     </main>
     <footer>
         <ul class="footer">
@@ -55,6 +44,5 @@
             <li><a href="https://www.linkedin.com/in/mauricio-lannutti-10003b99" target="_blank"><i class="fa-brands fa-linkedin"></i>Mauricio Lannutti</a></li>
         </ul>
     </footer>
-   
 </body>
 </html>
