@@ -44,7 +44,6 @@ def equipos():
     id = [columna [0] for columna in cursor.description]
     for unRegistro in resultado:
         insertarObjetos.append(dict(zip(id, unRegistro)))
-      
     cursor.close()
 
     return render_template('equipos.html', data = insertarObjetos)
