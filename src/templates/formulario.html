@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="https://kit.fontawesome.com/36a4c2d72b.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="../Java/globe-solid.svg">
+    <link rel="icon" href="{{ url_for('static', filename='java/globe-solid.svg') }}">
     <title>Iniciar Sesión</title>
 </head>
 <body>
@@ -14,24 +14,23 @@
             <h1>Iniciar Sesión<i class="fa-solid fa-circle-user"></i></h1>
         </div>
         <div class="contenedores">
-            <form action="respuesta-form.html">
+            <form action="{{ url_for('respuesta_form') }}" method="POST">
                 <div>
                     <label for="nick">Email</label>
-                    <input type="text" name="nick" size="35" required="True" placeholder="Escriba su Email" >
+                    <input type="text" name="nick" size="35" required placeholder="Escriba su Email">
                 </div>
                 <div>
                     <label for="pass">Contraseña</label>
-                    <input type="text" name="pass" size="30" required="True" placeholder="Contraseña">
+                    <input type="password" name="pass" size="30" required placeholder="Contraseña">
                 </div>
                 <div class="botoneslogin">
-                    <a href="crear-cuenta.html">Registrarse</a>
+                    <a href="{{ url_for('crear_cuenta') }}">Registrarse</a>
                     <input type="submit" value="Siguiente">
                 </div>
-                
             </form>
         </div>
         <div class="volverinicio">
-            <a href="index.html">Volver</a>
+            <a href="{{ url_for('home') }}">Volver</a>
         </div>
     </section>
 </body>

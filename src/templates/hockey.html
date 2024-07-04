@@ -11,23 +11,23 @@
 <body>
     <header class="header">
         <div id="inicio">
-            <a href="index.html" ><i class="fa-solid fa-house"></i>INICIO</a>
+            <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>INICIO</a>
         </div>
     </header>
     <section class="container">
         
         <div class="item subtitulo"> <h3>Tipos de cancha </h3></div> 
         <div class="item left"> Cancha de hockey sobre césped con base de agua 
-            <img src="../img/cancha_base_agua.jpg" alt="Cancha hockey base de agua">
+            <img src="{{ url_for('static', filename='img/cancha_base_agua.jpg') }}" alt="Cancha hockey base de agua">
             <p> La cancha con base de agua es apto para todos los niveles de hockey sobre césped y puede obtener las certificaciones FIH Global y FIH Global Elite mediante pruebas. Las competiciones internacionales de hockey sobre césped, como los Juegos Olímpicos y la Copa del Mundo de la 
                 FIH, exigen campos de hockey con base de agua. En la cima de las superficies con base de agua se encuentra el césped totalmente sintético con monofilamentos rizados cortos y densos que no requieren relleno y se riegan para mantener un nivel de juego óptimo. Cuando se riega, es posible realizar aún más habilidades y los jugadores pueden tener el máximo impacto en el juego. </p>
         </div>
         <div class="item contenido"> Cancha de hockey sobre césped con revestimiento de arena   
-            <img src="../img/cancha_con_revestimiento_de_arena.png" alt="Cancha de hockey con revestimiento de arena">
+            <img src="{{ url_for('static', filename='img/cancha_con_revestimiento_de_arena.png') }}" alt="Cancha de hockey con revestimiento de arena">
             <p>Una cancha de hockey sobre césped con revestimiento de arena es ideal para la mayoría de las aplicaciones de hockey. Puede albergar partidos a nivel nacional, local y de club, y puede obtener la certificación nacional de la FIH. Satisface la mayoría de los requisitos de un campo con agua y ofrece importantes ventajas económicas, por lo que es el tipo de campo de hockey sobre hierba más popular. Su densa superficie de fibras oculta el relleno de arena, que ayuda a sostener las fibras para crear una superficie de juego rápida, segura y consistente. </p>  
         </div>
         <div class="item contenido2"> Cancha de hockey sobre césped con relleno de arena 
-            <img src="../img/cancha_relleno_de_arena.jpg" alt="Cancha relleno de arena">
+            <img src="{{ url_for('static', filename='img/cancha_relleno_de_arena.jpg') }}" alt="Cancha relleno de arena">
             <p>Similar a un campo cubierto de arena, una cancha de hockey sobre césped con relleno de arena utiliza arena como material de relleno. La diferencia reside en que está hecha de menos fibras, más largas, y más arena, lo que hace que la bola ruede relativamente más despacio. Hoy en día, las canchas con relleno de arena construidas específicamente para el hockey son poco frecuentes y se adaptan mejor a un uso polideportivo, incluido el hockey. Para las comunidades y las instituciones educativas, representan la opción más económica entre nuestros tres tipos de canchas. </p>
         </div>
         <div class="descripcion"> <h3>Curiosidades</h3>

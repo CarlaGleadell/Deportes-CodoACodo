@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/36a4c2d72b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleVoley.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='java/globe-solid.svg') }}">
     <title>Voleyball</title>
-    <link rel="stylesheet" href="../static/css/styleVoley.css">
+    
         
 </head>
 
@@ -13,7 +15,7 @@
     <header class="header">
         <nav>            
             <div id="inicio">
-                <a href="index.html" ><i class="fa-solid fa-house"></i>INICIO</a>
+                <a href="{{ url_for('home') }}"><i class="fa-solid fa-house"></i>INICIO</a>
             </div>
             <ul class="nav-links"> 
                 <li><a href="#reglamento">Reglamento</a></li>
@@ -48,51 +50,53 @@
                 </ul>
             </div>
         </section>
-            <section id="jugadores">
+        <section id="jugadores">
+            <h1>Jugadores destacados</h1>
+            <br>
             <div class="jugadores-card container">
-                <h1>Jugadores destacados</h1>
                 <div class="jugador-item" id="jugador1">
-                    <img src="../img/EarvinNgapeth.jpg" alt="" class="jugador-item-img">
+                    <img src="{{ url_for('static', filename='img/EarvinNgapeth.jpg') }}" alt="EarvinNgapeth">
                     <div class="jugador-detalles">
                         <p class="jugador-nombre">Eravin Ngapeth</p>
                     </div>
                 </div>
                 <div class="jugador-item" id="jugador2">
-                    <img src="../img/GilbertoAmaurideGodoyFilho.jpg" alt="" class="jugador-item-img">
+                    <img src="{{ url_for('static', filename='img/GilbertoAmaurideGodoyFilho.jpg') }}" alt="GilbertoAmaurideGodoyFilho">
                     <div class="jugador-detalles">
                         <p class="jugador-nombre">Gilberto Amauri de Godoy Filho</p>
                     </div>
                 </div>
                 <div class="jugador-item" id="jugador3">
-                    <img src="../img/RobertlandySimonAties.jpg" alt="" class="jugador-item-img">
+                    <img src="{{ url_for('static', filename='img/RobertlandySimonAties.jpg') }}" alt="RobertlandySimonAties">
                     <div class="jugador-detalles">
                         <p class="jugador-nombre">Robertlandy Simon Aties</p>
                     </div>
                 </div>
                 <div class="jugador-item" id="jugador4">
-                    <img src="../img/ChiakaOgbogu.jpg" alt="" class="jugador-item-img">
+                    <img src="{{ url_for('static', filename='img/ChiakaOgbogu.jpg') }}" alt="ChiakaOgbogu">
                     <div class="jugador-detalles">
                         <p class="jugador-nombre">Chiaka Ogbogu</p>
                     </div>
                 </div>
                 <div class="jugador-item" id="jugador5">
-                    <img src="../img/ElenaEsteban.jpg" alt="" class="jugador-item-img">
+                    <img src="{{ url_for('static', filename='img/ElenaEsteban.jpg') }}" alt="ElenaEsteban">
                     <div class="jugador-detalles">
                         <p class="jugador-nombre">Elena Esteban</p>
                     </div>
                 </div>
                 <div class="jugador-item" id="jugador6">
-                    <img src="../img/KimYeon-koung.jpg" alt="" class="jugador-item-img">
+                    <img src="{{ url_for('static', filename='img/KimYeon-koung.jpg') }}" alt="KimYeon-koung">
                     <div class="jugador-detalles">
                         <p class="jugador-nombre">Kim Yeon-koung</p>
                     </div>
                 </div>
 
             </div>
-        </section>   
         <section id="historico">
             <div>
+                <br>
                 <h1>Histórico</h1>
+                <br>
                 <h3>Creación del Voleibol: 1895</h3>
                 <p>El voleibol vio la luz por primera vez en 1895 gracias al ingenio de William G. Morgan en Massachusetts, Estados Unidos. Este evento marcó el nacimiento de un deporte que se convertiría en un fenómeno global en las décadas siguientes, al fusionar elementos de baloncesto, béisbol, tenis y balonmano.</p>
                 <h3>Debut Olímpico: 1964 – La Consagración</h3>

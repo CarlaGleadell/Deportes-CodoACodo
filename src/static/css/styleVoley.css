@@ -123,7 +123,7 @@ nav {
     margin: 30px;
 }
 
-#jugadores{
+#jugadores {
     color: aliceblue;
     text-align: center;
     background-color: #000000;
@@ -132,33 +132,43 @@ nav {
     height: auto;
 }
 
+.jugadores-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
 .jugadores-card h1{
     margin: 30px;
 }
 
 
 .jugador-nombre {
-    position: absolute; 
-    top: 300px;
-    left: 0%;
-    background-color:rgb(5, 156, 47);
-    color: rgb(0, 0, 0); 
-    z-index: 1;
-    font-size:medium;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 10px;
+    font-size: medium;
+    text-align: center;
 }
 
 .jugador-item{
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-    display: inline-block;
+    width: 200px;
+    height: 300px;
     
 }
 .jugador-item-img{
     width: 200px;
     height: 300px;
+    object-fit: cover;
+    object-position: center 50%;
 }
 
 .jugador-detalles {
@@ -167,7 +177,6 @@ nav {
     padding: 20px; 
     border-radius: 20px;
 }
-
 
 
 #historico{
@@ -217,8 +226,6 @@ nav {
 }
 
 
-
-/* TABLETS */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     h2{
         font-size: 4vw;
@@ -226,14 +233,22 @@ nav {
 
 }
 
-/* CELULARES */
-@media screen and (max-width:767px){
-    h2{
+@media screen and (max-width:767px) {
+    h2 {
         font-size: 3vw;
     }
-
-    #footer{
+    
+    #footer {
         flex-direction: column;
         justify-content: center;
+    }
+
+    .jugadores-card {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .jugador-item {
+        width: 150px;
+        height: 225px;
     }
 }
