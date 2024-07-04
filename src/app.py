@@ -99,6 +99,70 @@ def eliminarEquipo(id):
     cursor.close()
     return render_template('eliminarEquipo.html', equipo=equipo)
 
+@app.route('/jugadores/<int:equipo_id>')
+def jugadores(equipo_id):
+    cursor = db.database.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM equipos WHERE Id = %s", (equipo_id,))
+    equipo = cursor.fetchone()
+    cursor.execute("SELECT j.* FROM jugadores j INNER JOIN equipo_has_jugadores ej ON j.DNI = ej.jugadores_DNI WHERE ej.equipos_Id = %s", (equipo_id,))
+    jugadores = cursor.fetchall()
+    cursor.close()
+    return render_template('jugadores.html', equipo=equipo, jugadores=jugadores)
+
+@app.route('/nuevoJugador/<int:equipo_id>', methods=['GET', 'POST'])
+def nuevoJugador(equipo_id):
+    cursor = db.database.cursor(dictionary=True)
+    if request.method == 'POST':
+        dni = request.form['dni']
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        localidad = request.form['localidad']
+        edad = request.form['edad']
+        
+        cursor.execute("INSERT INTO jugadores (DNI, Nombre, Apellido, Localidad, Edad) VALUES (%s, %s, %s, %s, %s)", 
+                       (dni, nombre, apellido, localidad, edad))
+        cursor.execute("INSERT INTO equipo_has_jugadores (jugadores_DNI, equipos_Id) VALUES (%s, %s)", 
+                       (dni, equipo_id))
+        db.database.commit()
+        return redirect(url_for('jugadores', equipo_id=equipo_id))
+    
+    cursor.execute("SELECT * FROM equipos WHERE Id = %s", (equipo_id,))
+    equipo = cursor.fetchone()
+    cursor.close()
+    return render_template('nuevoJugador.html', equipo=equipo)
+
+@app.route('/modificarJugador/<int:dni>/<int:equipo_id>', methods=['GET', 'POST'])
+def modificarJugador(dni, equipo_id):
+    cursor = db.database.cursor(dictionary=True)
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        localidad = request.form['localidad']
+        edad = request.form['edad']
+        
+        cursor.execute("UPDATE jugadores SET Nombre = %s, Apellido = %s, Localidad = %s, Edad = %s WHERE DNI = %s",
+                       (nombre, apellido, localidad, edad, dni))
+        db.database.commit()
+        return redirect(url_for('jugadores', equipo_id=equipo_id))
+    
+    cursor.execute("SELECT * FROM jugadores WHERE DNI = %s", (dni,))
+    jugador = cursor.fetchone()
+    cursor.close()
+    return render_template('modificarJugador.html', jugador=jugador, equipo_id=equipo_id)
+
+@app.route('/eliminarJugador/<int:dni>/<int:equipo_id>', methods=['GET', 'POST'])
+def eliminarJugador(dni, equipo_id):
+    cursor = db.database.cursor(dictionary=True)
+    if request.method == 'POST':
+        cursor.execute("DELETE FROM equipo_has_jugadores WHERE jugadores_DNI = %s", (dni,))
+        cursor.execute("DELETE FROM jugadores WHERE DNI = %s", (dni,))
+        db.database.commit()
+        return redirect(url_for('jugadores', equipo_id=equipo_id))
+    
+    cursor.execute("SELECT * FROM jugadores WHERE DNI = %s", (dni,))
+    jugador = cursor.fetchone()
+    cursor.close()
+    return render_template('eliminarJugador.html', jugador=jugador, equipo_id=equipo_id)
 
 if __name__ == '__main__':
     app.run(debug=True, port=4000)

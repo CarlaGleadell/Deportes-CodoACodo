@@ -22,7 +22,7 @@
         <form action="{{ url_for('nuevoJugador', equipo_id=equipo.Id) }}" method="post">
             <div>
                 <label for="dni" class="form-label">DNI</label>
-                <input type="number" class="form-control" id="dni" name="dni" required>
+                <input type="text" class="form-control" id="dni" name="dni" required>
             </div>
             <div>
                 <label for="nombre" class="form-label">Nombre</label>
@@ -38,8 +38,9 @@
             </div>
             <div>
                 <label for="edad" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="edad" name="edad" required>
+                <input type="text" class="form-control" id="edad" name="edad" required>
             </div>
+            <br>
             <button class="btn btn-success" type="submit">Guardar</button>
             <a href="{{ url_for('jugadores', equipo_id=equipo.Id) }}" class="btn btn-danger">Cancelar</a>
         </form>
