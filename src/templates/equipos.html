@@ -20,9 +20,7 @@
         <br>
         <h1>Lista de equipos</h1>
         <br>
-        <form action="{{ url_for('nuevoEquipo') }}" method="post">
-          <button type="submit" class="btn btn-success">Crear nuevo equipo</button>
-        </form>
+        <a href="{{ url_for('nuevoEquipo') }}" class="btn btn-success">Crear nuevo equipo</a>
         <table class="table table-striped">
             <thead>
               <tr>
@@ -35,17 +33,17 @@
             </thead>
             <tbody>
               {% for d in data %}
-                  <tr>
-                      <td>{{d.id}}</td>
-                      <td>{{d.nombre}}</td>
-                      <td>{{d.deporte}}</td>
-                      <td>{{d.localidad}}</td>
-                      <td>
-                        <button class="btn btn-info btn-sm" id="">Ver más</button>
-                        <button class="btn btn-warning btn-sm" id="">Editar</button>
-                        <a href="#" class="btn btn-danger btn-sm">Borrar</a>
-                      </td>
-                  </tr>
+              <tr>
+                <td>{{d.Id}}</td>
+                <td>{{d.Nombre}}</td>
+                <td>{{d.Deporte}}</td>
+                <td>{{d.Localidad}}</td>
+                <td>
+                  <button class="btn btn-info btn-sm" id="">Ver más</button>
+                  <button class="btn btn-warning btn-sm" id="">Editar</button>
+                  <a href="#" class="btn btn-danger btn-sm">Borrar</a>
+                </td>
+              </tr>
               {% endfor %}
            </tbody>
           </table>

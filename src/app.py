@@ -38,29 +38,31 @@ def respuesta_form():
 @app.route('/equipos')
 def equipos():
     cursor = db.database.cursor()
-    cursor.execute("Select * from equipos")
+    cursor.execute("SELECT * FROM equipos")
     resultado = cursor.fetchall()
     insertarObjetos = []
-    id = [columna [0] for columna in cursor.description]
+    columnas = [columna[0] for columna in cursor.description]
     for unRegistro in resultado:
-        insertarObjetos.append(dict(zip(id, unRegistro)))
+        insertarObjetos.append(dict(zip(columnas, unRegistro)))
     cursor.close()
+    return render_template('equipos.html', data=insertarObjetos)
 
-    return render_template('equipos.html', data = insertarObjetos)
-
-@app.route('/nuevoEquipo', methods = ['post'])
+@app.route('/nuevoEquipo', methods=['GET', 'POST'])
 def nuevoEquipo():
-    nombre = request.form['nombre']
-    deporte = request.form['deporte']
-    localidad = request.form['localidad']
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        deporte = request.form['deporte']
+        localidad = request.form['localidad']
 
-    if nombre and deporte and localidad:
-        cursor = db.database.cursor()
-        sql = "INSERT INTO equipos (nombre, deporte, localidad) VALUES (%s, %s, %s)"
-        data = ( nombre, deporte, localidad)
-        cursor.execute(sql, data)
-        db.database.commit()
-
+        if nombre and deporte and localidad:
+            cursor = db.database.cursor()
+            sql = "INSERT INTO equipos (Nombre, Deporte, Localidad) VALUES (%s, %s, %s)"
+            data = (nombre, deporte, localidad)
+            cursor.execute(sql, data)
+            db.database.commit()
+            cursor.close()
+            return redirect(url_for('equipos'))
+    
     return render_template('nuevoEquipo.html')
 
 if __name__ == '__main__':

@@ -20,22 +20,22 @@
         <br>
         <h1>Nuevo equipo</h1>
         <br>
-        <form action="/nuevoEquipo" method="post">
+        <form action="{{ url_for('nuevoEquipo') }}" method="post">
             <div>
-                <label for="formGroupExampleInput" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese el nombre del equipo">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre del equipo" required>
             </div>
             <div>
-                <label for="formGroupExampleInput" class="form-label">Deporte</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese el deporte que realiza el equipo">
+                <label for="deporte" class="form-label">Deporte</label>
+                <input type="text" class="form-control" id="deporte" name="deporte" placeholder="Ingrese el deporte que realiza el equipo" required>
             </div>
             <div>
-                <label for="formGroupExampleInput" class="form-label">Localidad</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese la localidad del equipo">
+                <label for="localidad" class="form-label">Localidad</label>
+                <input type="text" class="form-control" id="localidad" name="localidad" placeholder="Ingrese la localidad del equipo" required>
             </div>
             <button class="btn btn-success" type="submit">Guardar</button>
-            <button class="btn btn-danger">Cancelar</button>
         </form>
+        
 
     </main>
     <footer>

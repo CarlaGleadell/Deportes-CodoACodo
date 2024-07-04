@@ -6,3 +6,5 @@ database = mysql.connector.connect(
     password = '123456789',
     database = 'equipos'
 )
+
+database.autocommit=True
